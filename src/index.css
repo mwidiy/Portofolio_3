@@ -1,0 +1,72 @@
+@import url('@fontsource-variable/inter');
+@import url('@fontsource/jetbrains-mono/400.css');
+@import url('@fontsource/jetbrains-mono/500.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 20% 4%;
+    --foreground: 160 5% 96%;
+    --card: 160 10% 6%;
+    --card-foreground: 160 5% 96%;
+    --popover: 160 10% 6%;
+    --popover-foreground: 160 5% 96%;
+    --primary: 155 72% 50%;
+    --primary-foreground: 160 20% 4%;
+    --secondary: 220 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 160 5% 12%;
+    --muted-foreground: 160 5% 45%;
+    --accent: 155 72% 50%;
+    --accent-foreground: 160 20% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 160 5% 14%;
+    --input: 160 5% 14%;
+    --ring: 155 72% 50%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 160 10% 6%;
+    --sidebar-foreground: 160 5% 96%;
+    --sidebar-primary: 155 72% 50%;
+    --sidebar-primary-foreground: 160 20% 4%;
+    --sidebar-accent: 160 5% 12%;
+    --sidebar-accent-foreground: 160 5% 96%;
+    --sidebar-border: 160 5% 14%;
+    --sidebar-ring: 155 72% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter Variable', system-ui, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-mono-brand {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .text-gradient-primary {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
+  }
+  .glow-emerald {
+    box-shadow: 0 0 60px -15px hsl(155 72% 50% / 0.15);
+  }
+  .glow-blue {
+    box-shadow: 0 0 60px -15px hsl(220 80% 60% / 0.15);
+  }
+  .border-subtle {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
