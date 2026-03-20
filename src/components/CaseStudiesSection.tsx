@@ -33,7 +33,7 @@ const projects = [
   {
     title: "MS Word AI",
     subtitle: "Automation Agent",
-    link: "https://masukkan-link-web-mswordai-disini.com", // <-- GANTI DENGAN LINK WEB LO
+    link: "https://pupet.mwidiy.my.id/", // <-- GANTI DENGAN LINK WEB LO
     icon: <Cpu size={28} />,
     tags: ["Python", "LangChain", "LLM"],
     color: "secondary" as const,
