@@ -13,6 +13,7 @@ import {
   SiDocker,
 } from "react-icons/si";
 import { Sparkles, Workflow, Cloud } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const categories = [
   {
@@ -53,6 +54,8 @@ const categories = [
 ];
 
 export default function TechStackSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 bg-muted/30 border-y border-border">
       <div className="max-w-7xl mx-auto px-6">
@@ -64,10 +67,10 @@ export default function TechStackSection() {
           className="text-center mb-12"
         >
           <span className="text-xs font-mono-brand text-muted-foreground uppercase tracking-[0.3em]">
-            Tech Stack
+            {t.techTag}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3">
-            Alat <span className="text-gradient-primary">Tempur</span>
+            {t.techTitlePrefix} <span className="text-gradient-primary">{t.techTitleSuffix}</span>
           </h2>
         </motion.div>
 
@@ -81,11 +84,10 @@ export default function TechStackSection() {
           <span className="text-2xl shrink-0">🌟</span>
           <div>
             <h3 className="font-bold text-sm md:text-base">
-              Signature Skill: Fast Learner & Highly Adaptable
+              {t.techSigTitle}
             </h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Kemampuan untuk memahami tools atau tumpukan teknologi baru dalam
-              waktu singkat.
+              {t.techSigDesc}
             </p>
           </div>
         </motion.div>

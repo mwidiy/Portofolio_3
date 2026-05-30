@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Instagram, Github } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const socials = [
   { icon: <Mail size={24} />, label: "Email", href: "mailto:muhammadwidi72@gmail.com" },
@@ -8,6 +9,8 @@ const socials = [
 ];
 
 export default function ContactSection() {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-20 md:py-28 border-t border-border px-6">
       <motion.div
@@ -17,8 +20,8 @@ export default function ContactSection() {
         className="max-w-2xl mx-auto text-center"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Mari berkoneksi dan bangun sesuatu yang{" "}
-          <span className="text-gradient-primary">berdampak!</span>
+          {t.contactTitlePrefix}
+          <span className="text-gradient-primary">{t.contactTitleSuffix}</span>
         </h2>
 
         <div className="flex justify-center gap-4 mt-10">
@@ -36,7 +39,7 @@ export default function ContactSection() {
       </motion.div>
 
       <div className="mt-16 text-center text-muted-foreground/40 text-xs font-mono-brand">
-        © {new Date().getFullYear()} Widi. All rights reserved..
+        © {new Date().getFullYear()} {t.rights}
       </div>
     </footer>
   );

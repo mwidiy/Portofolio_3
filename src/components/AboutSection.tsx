@@ -1,25 +1,28 @@
 import { motion } from "framer-motion";
 import { Footprints, Shield, Megaphone } from "lucide-react";
-
-const timeline = [
-  {
-    icon: <Footprints size={20} />,
-    title: "Mulai Bergerak",
-    text: "Keluar zona nyaman dari mahasiswa biasa menjadi pengurus organisasi kampus.",
-  },
-  {
-    icon: <Shield size={20} />,
-    title: "Transformasi & Leadership",
-    text: "Terpilih sebagai Wakil Ketua di masa krisis. Merombak manajemen dan berhasil menumbuhkan jumlah anggota secara masif.",
-  },
-  {
-    icon: <Megaphone size={20} />,
-    title: "Ekspansi Impact",
-    text: "Melanjutkan peran sebagai Kepala Humas di KAMMI. Di waktu luang, menyalurkan hobi mengajar anak-anak untuk tetap membumi.",
-  },
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function AboutSection() {
+  const { t } = useLanguage();
+
+  const timeline = [
+    {
+      icon: <Footprints size={20} />,
+      title: t.aboutTl1Title,
+      text: t.aboutTl1Desc,
+    },
+    {
+      icon: <Shield size={20} />,
+      title: t.aboutTl2Title,
+      text: t.aboutTl2Desc,
+    },
+    {
+      icon: <Megaphone size={20} />,
+      title: t.aboutTl3Title,
+      text: t.aboutTl3Desc,
+    },
+  ];
+
   return (
     <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto">
       <motion.div
@@ -29,10 +32,10 @@ export default function AboutSection() {
         className="text-center mb-16"
       >
         <span className="text-xs font-mono-brand text-muted-foreground uppercase tracking-[0.3em]">
-          Journey
+          {t.aboutTag}
         </span>
         <h2 className="text-3xl md:text-4xl font-bold mt-3">
-          Perjalanan <span className="text-gradient-primary">Gue</span>
+          {t.aboutTitlePrefix} <span className="text-gradient-primary">{t.aboutTitleSuffix}</span>
         </h2>
       </motion.div>
 
